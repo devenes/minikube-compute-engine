@@ -45,3 +45,7 @@ variable "label_developer" {
 variable "label_environment" {
   type = string
 }
+
+variable "firewall_name" {
+  type = string
+}
