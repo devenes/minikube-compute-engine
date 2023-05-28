@@ -2,7 +2,7 @@
 resource "google_compute_firewall" "minikube-firewall" {
   name        = var.firewall_name
   network     = google_compute_network.minikube.name
-  description = "Allow SSH from IAP tunnel and the Internet"
+  description = "Allow SSH from IAP tunnel"
 
   allow {
     protocol = "tcp"
