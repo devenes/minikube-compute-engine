@@ -1,5 +1,5 @@
 output "ssh_command_minikube" {
-  value = "To SSH into the bastion host, use the following gcloud command:\n\n  gcloud compute ssh ${google_compute_instance.minikube.name} --zone ${var.zone} --project ${var.project_id} --tunnel-through-iap\n\nMake sure you have the gcloud command-line tool installed and configured on your local machine before running the command. Once you have SSHed into the bastion host, you can then use it to access other resources in your Google Cloud environment."
+  value = "To SSH into the host, use the following gcloud command:\n\n  gcloud compute ssh ${google_compute_instance.minikube.name} --zone ${var.zone} --project ${var.project_id} --tunnel-through-iap\n\nMake sure you have the gcloud command-line tool installed and configured on your local machine before running the command. Once you have SSHed into the host, you can then use it to access other resources in your Google Cloud environment."
 }
 
 
