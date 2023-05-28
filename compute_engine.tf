@@ -23,7 +23,7 @@ resource "google_compute_instance" "minikube" {
   }
 
   network_interface {
-    network = "default"
+    network = google_compute_network.minikube.name
 
     access_config {
       // Ephemeral IP
