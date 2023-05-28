@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./minikube.jpg" alt="Minikube Compute Engine1" />
+  <img src="./.github/minikube.jpg" alt="Minikube Compute Engine1" />
 
 &#xa0;
 
