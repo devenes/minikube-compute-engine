@@ -15,11 +15,17 @@ resource "google_compute_firewall" "minikube-firewall" {
   }
 
   allow {
+    protocol = "tcp"
+    ports    = ["8001"]
+  }
+
+  allow {
     protocol = "icmp"
   }
 
   source_ranges = [
-    "35.235.240.0/20"
+    "35.235.240.0/20", # Allow IAP tunnel
+    "0.0.0.0/0",       # Allow all other traffic
   ]
 
   depends_on = [
