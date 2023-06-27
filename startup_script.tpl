@@ -35,3 +35,15 @@ install minikube-linux-amd64 /usr/local/bin/minikube
 
 # Switch to the new user and start Minikube
 su -c "minikube start --driver=docker" - "${host_user}"
+
+# Enable Minikube Dashboard
+su -c "minikube dashboard &" - "${host_user}"
+
+# Enable Minikube Metrics Server addon
+su -c "minikube addons enable metrics-server" - "${host_user}"
+
+# Set proxy for Minikube
+su -c "kubectl proxy --address='0.0.0.0' --accept-hosts='^*$' &" - "${host_user}"
+
+# Create a deployment
+su -c "kubectl create deployment my-nginx --image=nginx" - "${host_user}"
