@@ -15,3 +15,9 @@ output "instance_details_minikube" {
     console          = "https://console.cloud.google.com/compute/instancesDetail/zones/${var.zone}/instances/${google_compute_instance.minikube.name}"
   }
 }
+
+
+# Print Minikube Dashboard URL
+output "minikube_dashboard_url" {
+  value = "http://${google_compute_instance.minikube.network_interface.0.access_config.0.nat_ip}:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+}
